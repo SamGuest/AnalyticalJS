@@ -37,7 +37,7 @@ body{
     margin: 10px;
     display: inline-block;
     background: rgb(0,245,255);
-    background: linear-gradient(145deg, rgba(0,245,255,1) 0%, rgba(55,109,255,1) 50%, rgba(102,0,255,1) 100%);
+    background-image: linear-gradient(to right bottom, #39aaff, #0093ff, #0078ff, #2855ff, #6e00ff);
     transition:all 0.5s ease-in-out;
     transform:scale(1);
     border: 0px;
