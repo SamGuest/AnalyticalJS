@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&family=Pacifico&display=swap');
+
+body{
+    margin:0px;
+    padding:0px;
+    font-size:16px;
+    font-family: 'Inconsolata', monospace;
+}
+
+.logo{
+    font-family: 'Pacifico', cursive;
+    font-size:74px;
+    background: rgb(0,245,255);
+    background: linear-gradient(145deg, rgba(0,245,255,1) 0%, rgba(55,109,255,1) 50%, rgba(102,0,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 40px;
+}
+
+.hero-head{
+    height:100vh;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-image: linear-gradient(to left top, #daeefd, #d7e9ff, #d8e4ff, #ddddff, #e6d5ff);
+}
+
+.hero-content{
+    text-align:center;
+}
+
+.btn-gradient-purple, .btn-gradient-purple:hover, .btn-gradient-purple:visited{
+    color:#daeefd;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 10px;
+    display: inline-block;
+    background: rgb(0,245,255);
+    background: linear-gradient(145deg, rgba(0,245,255,1) 0%, rgba(55,109,255,1) 50%, rgba(102,0,255,1) 100%);
+    transition:all 0.5s ease-in-out;
+    transform:scale(1);
+    border: 0px;
+}
+.btn-gradient-purple:hover{
+    transform:scale(1.2);
+}
