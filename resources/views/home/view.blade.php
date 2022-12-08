@@ -20,11 +20,24 @@
        
         <div class="hero-head">
 
+            <div class="bar-holder">
+                <div class="bar fill1"></div>
+                <div class="bar fill2"></div>
+                <div class="bar fill3"></div>
+                <div class="bar fill4"></div>
+                <div class="bar fill1"></div>
+                <div class="bar fill5"></div>
+                <div class="bar fill6"></div>
+                <div class="bar fill1"></div>
+                <div class="bar fill2"></div>
+                <div class="bar fill3"></div>
+            </div>
+
             <div class="hero-content">
 
                 <h1 class="logo">Analytical.js</h1>
 
-                <p>Open source, transparent, simple and free for all website analytics.</p>
+                <p>Open source, transparent, simple and free for all <span class="underlined">website analytics.</span></p>
 
                 <a href="https://github.com/SamGuest/AnalyticalJS" class="btn btn-gradient-purple">View on GitHub</a>
 
