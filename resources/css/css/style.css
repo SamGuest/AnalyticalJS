@@ -42,6 +42,11 @@ body{
     transform:scale(1);
     border: 0px;
 }
+
+.btn-gradient-purple-alternative{
+    background-image: linear-gradient(to left top, #daeefd, #98d0ff, #69acff, #6980ff, #903fff);
+}
+
 .btn-gradient-purple:hover{
     transform:scale(1.2);
 }
