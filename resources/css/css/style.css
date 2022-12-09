@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&family=Pacifico&family=Arimo:wght@400;700&display=swap');
 
 body{
     margin:0px;
@@ -42,6 +42,9 @@ body{
 
 .hero-content{
     text-align:center;
+    position:relative;
+    z-index:2;
+    padding:20px
 }
 
 .btn-gradient-purple, .btn-gradient-purple:hover, .btn-gradient-purple:visited, .btn-gradient-purple:active{
@@ -57,18 +60,30 @@ body{
     border: 0px;
 }
 
-.btn-gradient-purple-alternative{
-    background-image: linear-gradient(to left top, #daeefd, #98d0ff, #69acff, #6980ff, #903fff);
+.btn-gradient-purple-alternative, .btn-gradient-purple-alternative:hover, .btn-gradient-purple-alternative:visited, .btn-gradient-purple-alternative:active{
+    font-family: 'Arimo', sans-serif;
+    color:#daeefd;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 10px;
+    display: inline-block;
+    background: rgb(0,245,255);
+    background-image: linear-gradient(to left top, #ff9100, #df09c6, #ca00e1, #a600ff, #903fff);
+    transition:all 0.5s ease-in-out;
+    transform:scale(1);
+    border: 0px;
+    font-weight:bold;
 }
 
-.btn-gradient-purple:hover{
+.btn-gradient-purple:hover, .btn-gradient-purple-alternative:hover{
     transform:scale(1.2);
 }
 
 .underlined{
     font-weight:bold;
-    color:#903fff;
+    color:rgba(55,109,255,1);
     position:relative;
+    white-space: nowrap;
 }
 
 a.underlined:hover:after{
@@ -88,4 +103,16 @@ a.underlined:hover:after{
     height:4px;
     background-image: linear-gradient(to right, #eb4c9f, #e930b0, #df09c6, #ca00e1, #a600ff);
     transition:all 0.5s ease-in-out;
+}
+
+.domainPanel{
+    background:linear-gradient(to right, #eb4c9f, #e930b0, #df09c6, #ca00e1, #a600ff);
+    border-radius:10px;
+    padding:20px;
+}
+
+.domainPanelInner{
+    padding:2px;
+    border-radius:10px;
+    background-color:#FFF;
 }

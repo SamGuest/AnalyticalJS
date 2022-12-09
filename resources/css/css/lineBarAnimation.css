@@ -13,6 +13,7 @@
     /* z-index: 0; */
     /* opacity: 0.2; */
     /* animation: rotateAround 10s infinite alternate;*/
+    pointer-events: none;
  }
 
 .bar {
@@ -28,6 +29,7 @@
     mix-blend-mode: soft-light;
     animation: fill 10s infinite alternate, colors 10s infinite alternate;
     display: inline-block;
+    transform-origin:bottom center;
 }
 
 .bar.fill1 {
@@ -59,42 +61,42 @@
 
 
 @keyframes fill {
-  0%   { transform: scaleY(0); }
+  0%   { transform: scaleY(0%); }
   33%  { transform: scaleY(30%);}
   66%  { transform: scaleY(10%);}
   100% { transform: scaleY(51%); }
 }
 
 @keyframes fill-1 {
-  0%   { transform: scaleY(0); }
+  0%   { transform: scaleY(20%); }
   33%  { transform: scaleY(50%);}
   66%  { transform: scaleY(20%);}
   100% { transform: scaleY(50%); }
 }
 
 @keyframes fill-2 {
-  0%   { transform: scaleY(0); }
+  0%   { transform: scaleY(30%); }
   33%  { transform: scaleY(30%);}
   66%  { transform: scaleY(40%);}
   100% { transform: scaleY(50%); }
 }
 
 @keyframes fill-3 {
-  0%   { transform: scaleY(0); }
+  0%   { transform: scaleY(10%); }
   33%  { transform: scaleY(50%);}
   66%  { transform: scaleY(24%);}
   100% { transform: scaleY(49%); }
 }
 
 @keyframes fill-4 {
-  0%   { transform: scaleY(0); }
+  0%   { transform: scaleY(30%); }
   33%  { transform: scaleY(22%);}
   66%  { transform: scaleY(34%);}
   100% { transform: scaleY(50%); }
 }
 
 @keyframes fill-5 {
-  0%   { transform: scaleY(0); }
+  0%   { transform: scaleY(20%); }
   33%  { transform: scaleY(30%);}
   66%  { transform: scaleY(10%);}
   100% { transform: scaleY(48%); }
@@ -102,16 +104,16 @@
 
 
 @keyframes fill-6 {
-  0%   { transform: scaleY(0); }
+  0%   { transform: scaleY(10%); }
   33%  { transform: scaleY(48%);}
   66%  { transform: scaleY(22%);}
   100% { transform: scaleY(52%); }
 }
 
 @keyframes colors {
-  0% { background-color: #96c93d}
-  50% { background-color: #2980B9;}
-  100% { background-color: #903fff;}
+  0% { background-color: #2855ff;}
+  50% { background-color: rgba(55,109,255,1);}
+  100% { background-color: #3d006b;}
 }
 
 @keyframes rotateAround{
