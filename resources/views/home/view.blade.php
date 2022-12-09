@@ -68,5 +68,11 @@
 
         </div>
 
+        <script>
+            function goToSite () {
+                window.location.href = "/site/"+document.getElementById("website").value;
+            }
+        </script>
+        
     </body>
 </html>

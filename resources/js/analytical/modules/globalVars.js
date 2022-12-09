@@ -12,7 +12,7 @@ export var failed = false;
 
 async function initDetails(){
     var theResponse;
-    fetch("http://analyticaljs.test/api/initDetails").then( (response) => response.json() ).then((responseData) => {
+    fetch("https://analyticaljs.com/api/initDetails").then( (response) => response.json() ).then((responseData) => {
         userIP = responseData.userIP;
         referrer = responseData.referrer;
         referrerDomain = responseData.referrerDomain;

@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-4">
 
-                <button onClick="window.goToSite();" class="btn btn-gradient-purple-alternative btn100">GO!</button>
+                <button onClick="goToSite();" class="btn btn-gradient-purple-alternative btn100">GO!</button>
 
             </div>
         
