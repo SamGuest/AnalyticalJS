@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
  mix.setPublicPath('public_html/');
  mix.js('resources/js/app.js', 'js')
+    .js('resources/js/analytical.js', 'js')
      .postCss('resources/css/app.css', 'css', [
          //
      ]);

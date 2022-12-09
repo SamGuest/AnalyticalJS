@@ -21,3 +21,6 @@ Auth::routes();
 
 // Admin Routes
 Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
+
+// Site pages
+Route::get('/site/{domain?}', [App\Http\Controllers\SitesController::class, 'site'])->name('site');

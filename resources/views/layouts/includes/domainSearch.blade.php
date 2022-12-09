@@ -1,27 +1,27 @@
-<div class="domainPanel">
+<div class="panel">
+
+    <h2 class="panelHeader">VIEW SITE ANALYTICS</h2>
                 
-    <div class="domainPanelInner">
-    
-        <form action="#" method="GET">
+    <div class="panelInner">
 
-            @csrf <!-- {{ csrf_field() }} -->
+        <div class="row">
 
-            <div class="row">
+            <div class="col-md-8 alignMiddle">
 
-                <div class="col-8">
-            
-                    <input type="text" name="website" id="website" class="input" value="">
+                <div class="doimainInput">
+        
+                    <input type="text" name="website" id="website" class="input" placeholder="analyticaljs.com" value="">
 
                 </div>
-                <div class="col-4">
 
-                    <input type="submit" class="btn btn-gradient-purple-alternative" value="View Stats">
-
-                </div>
-            
             </div>
+            <div class="col-md-4">
 
-        </form>
+                <button onClick="window.goToSite();" class="btn btn-gradient-purple-alternative btn100">GO!</button>
+
+            </div>
+        
+        </div>
     
     </div>
 
