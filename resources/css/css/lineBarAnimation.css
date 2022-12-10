@@ -29,6 +29,7 @@
     animation: fill 10s infinite alternate, colors 10s infinite alternate;
     display: inline-block;
     transform-origin:bottom center;
+    min-width: 93px;
 }
 
 .bar.fill1 {

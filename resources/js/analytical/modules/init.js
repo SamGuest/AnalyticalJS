@@ -11,7 +11,6 @@ module.exports = class init {
 
     /* For debug messages in debug mode */
     debugMessage(message) {
-        console.log(this.vars);
         if(this.debug == true){
             console.log(message);
         }

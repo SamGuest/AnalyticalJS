@@ -70,7 +70,7 @@
 
         <script>
             function goToSite () {
-                window.location.href = "/site/"+document.getElementById("website").value;
+                window.location.href = "/site/"+document.getElementById("website").value.replace('https://','').replace('http://','').split('/')[0].toLowerCase();
             }
         </script>
         
