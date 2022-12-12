@@ -17,7 +17,7 @@ window.onload = function(){
         }
 
         window.onbeforeunload = function (event) {
-            fetch("http://analyticaljs.test/api/unmount/"+System.vars.id);
+            fetch("https://analyticaljs.com/api/unmount/"+System.vars.id);
         }
 
         function init(){
