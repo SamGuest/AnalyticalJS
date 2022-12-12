@@ -16,6 +16,10 @@ window.onload = function(){
             }
         }
 
+        window.onbeforeunload = function (event) {
+            fetch("http://analyticaljs.test/api/unmount/"+System.vars.id);
+        }
+
         function init(){
             System.debugMessage("Analytical.js intilised");
             System.debugMessage(System.vars.referrerDomain);

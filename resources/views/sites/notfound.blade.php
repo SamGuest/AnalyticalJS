@@ -7,7 +7,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Web Analytics for {!! $website->domain !!} - {{ config('app.name', 'Laravel') }}</title>
+        <title>Web Analytics for {!! $domain !!} - {{ config('app.name', 'Laravel') }}</title>
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
@@ -32,27 +32,22 @@
                 <h1 class="logo">Analytical.js</h1>
 
                 <div class="glassText domain">
-                    {!! $website->domain !!}
+                    {!! $domain !!}
                 </div>
 
-                <div class="spacer20"></div>
+                    <div class="glassText">
 
-                <div class="row">
-
-                    <div class="col-md-12">
-                
-                        @include('sites.elements.daily')
+                        Site Not Found
 
                     </div>
 
-                </div>
+                <div class="spacer20"></div>
+
+                <a href="/" class="btn btn-gradient-purple-alternative btn100">Go Back</a>
 
             </div>
 
         </div>
 
     </body>
-
-    <script src="{{ mix('js/chart.js') }}" defer></script>
-
 </html>

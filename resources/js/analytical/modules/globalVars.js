@@ -9,14 +9,16 @@ export var userIP = "";
 export var referrer = "";
 export var referrerDomain = "";
 export var failed = false;
+export var id = "";
 
 async function initDetails(){
     var theResponse;
-    fetch("https://analyticaljs.com/api/initDetails").then( (response) => response.json() ).then((responseData) => {
+    fetch("http://analyticaljs.test/api/initDetails").then( (response) => response.json() ).then((responseData) => {
         userIP = responseData.userIP;
         referrer = responseData.referrer;
         referrerDomain = responseData.referrerDomain;
         failed = responseData.failed;
+        id = responseData.id;
     });
     return theResponse;
 }

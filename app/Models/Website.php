@@ -13,4 +13,8 @@ class Website extends Model
     ];
 
     use SoftDeletes;
+
+    public function days() {
+        return $this->hasMany('App\Models\Session','website_id','id');
+    }
 }

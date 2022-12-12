@@ -21,29 +21,39 @@ class ApiFunctionController
         $referrer = $_SERVER['HTTP_REFERER'];
         $referrerDomain = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
         $website = Website::where("domain",$referrerDomain);
+        $id = 0;
 
-        if($website->get()->count() > 0){
+        if(str_contains($ip, "192.168") && env("APP_ENV") == "Production") {
+            $failed = true;
+        } else if($website->get()->count() > 0){
             $failed = false;
-            $session = Session::whereDate('created_at', Carbon::today())->where("website_id", $website->first()->id);
+            $session = Session::whereDate('created_at', Carbon::today())->where("session_ended", null)->where("website_id", $website->first()->id);
             if($session->get()->count() > 0){
                 $session->first()->update(["pages" => $session->first()->pages+1]);
+                $id = $session->first()->id;
             } else {
-                Session::create(["website_id" => $website->first()->id, "pages" => 1, "ip" => Request::getClientIp(true)]);
+                $newSession = Session::create(["website_id" => $website->first()->id, "pages" => 1, "ip" => Request::getClientIp(true)]);
+                $id = $newSession->id;
             }
-        } else if(str_contains($ip, "192.168") && env("APP_ENV") == "Production") {
-            $failed = true;
         } else if($website->get()->count() < 1) {
             $failed = false;
             $newWebsite = Website::create(["domain" => $referrerDomain]);
-            Session::create(["website_id" => $newWebsite->id, "pages" => 1]);
+            $newSession = Session::create(["website_id" => $newWebsite->id, "pages" => 1]);
+            $id = $newSession->id;
         } else {
             $failed = true;
         }
         return [
+            "id" => $id,
             "userIP" => $ip, 
             "referrer" => $referrer,
             "referrerDomain" => $referrerDomain,
             "failed" => $failed
             ];
+    }
+
+    public function unmount($id)
+    {
+        Session::where("id", $id)->update(["session_ended" => Carbon::now()]);
     }
 }
