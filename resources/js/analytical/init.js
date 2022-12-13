@@ -3,6 +3,8 @@ let System = new init();
 
 window.onload = function(){
 
+    console.log(process.env.MIX_APP_URL);
+
         /* Initilising Analytical.JS */
         startUp()
         
@@ -17,7 +19,7 @@ window.onload = function(){
         }
 
         window.onbeforeunload = function (event) {
-            fetch("https://analyticaljs.com/api/unmount/"+System.vars.id);
+            fetch(process.env.MIX_APP_URL+"/api/unmount/"+System.vars.id);
         }
 
         function init(){
