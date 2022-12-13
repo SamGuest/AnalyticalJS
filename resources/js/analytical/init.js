@@ -3,8 +3,6 @@ let System = new init();
 
 window.onload = function(){
 
-    console.log(process.env.MIX_APP_URL);
-
         /* Initilising Analytical.JS */
         startUp()
         
@@ -19,7 +17,12 @@ window.onload = function(){
         }
 
         window.onbeforeunload = function (event) {
-            fetch(process.env.MIX_APP_URL+"/api/unmount/"+System.vars.id);
+            if(process.env.NODE_ENV == "production"){
+                var url = process.env.MIX_APP_URL_PROD+"/api/unmount/"+System.vars.id;
+            } else {
+                var url = process.env.MIX_APP_URL+"/api/unmount/"+System.vars.id;
+            }
+            fetch(url);
         }
 
         function init(){

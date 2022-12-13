@@ -10,10 +10,15 @@ export var referrer = "";
 export var referrerDomain = "";
 export var failed = false;
 export var id = "";
+export var debug = false;
 
 async function initDetails(){
     var theResponse;
-    var url = process.env.MIX_APP_URL+"/api/initDetails";
+    if(process.env.NODE_ENV == "production"){
+        var url = process.env.MIX_APP_URL_PROD+"/api/initDetails";
+    } else {
+        var url = process.env.MIX_APP_URL+"/api/initDetails";
+    }
     fetch(url).then( (response) => response.json() ).then((responseData) => {
         userIP = responseData.userIP;
         referrer = responseData.referrer;
