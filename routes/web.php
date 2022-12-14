@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,12 @@ use Illuminate\Support\Facades\Route;
 // Homepage Routes
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Auth Routes
-Auth::routes();
-
 // Admin Routes
-Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
+Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
 
 // Site pages
 Route::get('/site/{domain?}', [App\Http\Controllers\SitesController::class, 'site'])->name('site');
+
+
+// Auth Routes
+Auth::routes();
