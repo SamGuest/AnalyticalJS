@@ -71,7 +71,7 @@ body{
     margin: 10px;
     display: inline-block;
     background: rgb(0,245,255);
-    background:linear-gradient(to right,#3fa0f0, #22ddb7);
+    background:linear-gradient(to right,#22ddb7, #3fa0f0);
     transition:all 0.5s ease-in-out;
     transform:scale(1);
     border: 0px;
