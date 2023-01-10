@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -21,8 +22,23 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    // public function index()
+    // {
+    //     return view('admin.dashboard');
+    // }
+
     public function index()
     {
-        return view('admin.dashboard');
+        if(Auth::user()){
+            if(Auth::user()->role == 0){
+                return view('admin.dashboard');
+            } else {
+                return redirect()->route('home');
+            }
+        } else {
+            return redirect()->route('home');
+        }
     }
 }
+
