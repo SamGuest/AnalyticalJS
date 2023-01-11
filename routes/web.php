@@ -26,3 +26,6 @@ Route::get('/site/{domain?}', [App\Http\Controllers\SitesController::class, 'sit
 
 // Auth Routes
 Auth::routes();
+
+// Pages Controller
+Route::get('/details', [App\Http\Controllers\PagesController::class, 'details'])->name('details');
