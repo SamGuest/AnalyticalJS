@@ -69,8 +69,8 @@ class UserController extends Controller
     {
         $data = array(
             'username' => User::find($id)->name,
-            'email' => auth()->user()->email,
-            'title' => 'Welcome {{$user}}' 
+            'email' => User::find($id)->email,
+            'title' => 'Edit User' 
         );
         return view ('user.admin.show')->with($data);
     }
@@ -83,14 +83,16 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        $title = 'User';
-
+        $data = array(
+            'username' => User::find($id)->name,
+            'email' => auth()->user()->email,
+            'title' => 'Edit User' 
+        );
         // if(auth()->user()->id !==$post->user_id){
         //     return redirect('/posts')->with('error', 'Unautherized Page');
         // }
 
-        return view ('user.edit')->with('post', $post)->with('title', $title);
+        return view ('user.admin.edit')->with($data);
     }
 
     /**

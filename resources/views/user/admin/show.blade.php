@@ -18,9 +18,9 @@
 
                         {{$username}}<br>
 
-                        {{$email}}
+                        {{$email}}<br> 
 
-                        {{-- <a href="{{ route('user.admin.edit', $user->id) }}" class="btn btn-gradient-purple">Edit</a> --}}
+                        {{-- <a href="{{ route('user.admin.edit', $username) }}" class="btn btn-gradient-purple">Edit</a> --}}
                 
                         {{-- {!!Form::open(['action' => ['App\Http\Controllers\UserController@update', $post->id], 'methdd' => 'POST', 'class' => 'deleteBtn'])!!}
                             {{Form::hidden('_method', 'DELETE')}}

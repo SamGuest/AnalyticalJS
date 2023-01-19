@@ -21,4 +21,6 @@
         {{ Form::close() }} 
     </div>
 </div> --}}
+{{$username}}
+{{$email}}
 @include('layouts.footer')
