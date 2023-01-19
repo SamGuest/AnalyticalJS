@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Auth::routes();
 
 // Pages Controller
 Route::get('/details', [App\Http\Controllers\PagesController::class, 'details'])->name('details');
+
+#Routes all the User system
+Route::resource('/user', UserController::class);
