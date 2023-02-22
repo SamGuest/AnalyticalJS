@@ -4,7 +4,7 @@ let System = new init();
 window.onload = function(){
 
         /* Initilising Analytical.JS */
-        startUp()
+        startUp();
         
         function startUp(){
             if(System.vars.failed == false){
@@ -14,15 +14,6 @@ window.onload = function(){
                     setTimeout( () => { startUp(); }, 1 );
                 }
             }
-        }
-
-        window.onbeforeunload = function (event) {
-            if(process.env.NODE_ENV == "production"){
-                var url = process.env.MIX_APP_URL_PROD+"/api/unmount/"+System.vars.id;
-            } else {
-                var url = process.env.MIX_APP_URL+"/api/unmount/"+System.vars.id;
-            }
-            fetch(url);
         }
 
         function init(){

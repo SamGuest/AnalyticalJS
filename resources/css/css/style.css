@@ -80,7 +80,7 @@ body{
 }
 
 .btn-gradient-purple:hover, .btn-gradient-purple-alternative:hover{
-    transform:scale(1.2);
+    transform:scale(1.05);
     box-shadow: rgba(17, 12, 46, 0.15) 0px 4px 4px 0px;
 }
 

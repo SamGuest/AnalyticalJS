@@ -32,7 +32,7 @@
                 <h1 class="logo">Analytical.js</h1>
 
                 <div class="glassText domain">
-                    {!! $website->domain !!}
+                    {{ $website->domain }}
                 </div>
 
                 <div class="spacer20"></div>

@@ -27,7 +27,7 @@ class ApiFunctionController
             $failed = true;
         } else if($website->get()->count() > 0){
             $failed = false;
-            $session = Session::whereDate('created_at', Carbon::today())->where("session_ended", null)->where("website_id", $website->first()->id);
+            $session = Session::where('updated_at', '>', Carbon::now()->subMinutes(10)->toDateTimeString())->where("website_id", $website->first()->id);
             if($session->get()->count() > 0){
                 $session->first()->update(["pages" => $session->first()->pages+1]);
                 $id = $session->first()->id;
