@@ -25,8 +25,8 @@ class SitesController extends Controller
         if($website->count() > 0){
             $days = array();
             $mins = Carbon::now()->subMinutes(30)->toDateTimeString();
-            $realtimeUsers = $website->first()->days()->where('updated_at', '>', $mins)->groupBy("ip")->count();
-            $realtimePages = $website->first()->days()->where('updated_at', '>', $mins)->groupBy("ip")->sum("pages");
+            $realtimeUsers = $website->first()->days()->where('updated_at', '>', $mins)->count();
+            $realtimePages = $website->first()->days()->where('updated_at', '>', $mins)->sum("pages");
             for ($i = 0; $i < 24; $i++) {
                 $hour = Carbon::now()->subHours($i)->startOfHour()->toDateTimeString();
                 $hourDisplay = Carbon::now()->subHours($i)->startOfHour()->toTimeString();
