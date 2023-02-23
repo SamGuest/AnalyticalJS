@@ -200,3 +200,16 @@ a.underlined:hover:after{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.chart{
+    max-height: 400px;
+}
+
+.largeNumber{
+    font-size:100px;
+    font-weight:bold;
+}
+
+.height100{
+    height:100%;
+}

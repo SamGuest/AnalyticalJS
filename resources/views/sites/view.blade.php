@@ -27,7 +27,7 @@
        
         <div class="hero-head">
 
-            <div class="hero-content">
+            <div class="container text-center">
 
                 <h1 class="logo">Analytical.js</h1>
 
@@ -39,9 +39,15 @@
 
                 <div class="row">
 
-                    <div class="col-md-12">
+                    <div class="col-lg-8 mt-3 mb-3">
                 
-                        @include('sites.elements.daily')
+                        @include('sites.elements.charts.daily')
+
+                    </div>
+
+                    <div class="col-lg-4 mt-3 mb-3">
+                
+                        @include('sites.elements.charts.realtime')
 
                     </div>
 

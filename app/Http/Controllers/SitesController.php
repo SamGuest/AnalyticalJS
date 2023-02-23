@@ -24,18 +24,22 @@ class SitesController extends Controller
         $website = Website::where("domain",$domain)->with("days");
         if($website->count() > 0){
             $days = array();
+            $mins = Carbon::now()->subMinutes(30)->toDateTimeString();
+            $realtimeUsers = $website->first()->days()->where('updated_at', '>', $mins)->groupBy("ip")->count();
+            $realtimePages = $website->first()->days()->where('updated_at', '>', $mins)->groupBy("ip")->sum("pages");
             for ($i = 0; $i < 24; $i++) {
-                $combined = array();
-                $hour = Carbon::today()->subHour($i);
-                $pages = $website->first()->days()->whereDate('created_at',  $hour)->sum("pages");
-                $sessions = $website->first()->days()->whereDate('created_at',  $hour)->count();
+                $hour = Carbon::now()->subHours($i+1)->startOfHour()->toDateTimeString();
+                $hourDisplay = Carbon::now()->subHours($i)->startOfHour()->toTimeString();
+                $hourEnd = Carbon::now()->subHours($i+1)->endOfHour()->toDateTimeString();
+                $sessions = $website->first()->days()->where('created_at', '>=', $hour)->where('created_at', '<', $hourEnd)->count();
+                $pages = $website->first()->days()->where('created_at', '>=', $hour)->where('created_at', '<', $hourEnd)->sum("pages");
                 $days[$i] = [
-                    "hour" => $i,
+                    "hour" => $hourDisplay,
                     "sessions" => $sessions,
                     "pages" => $pages
                 ];
             }
-            return view('sites.view')->with("website", $website->first())->with("daily", $days);
+            return view('sites.view')->with("website", $website->first())->with("daily", array_reverse($days))->with("realtimeUsers", $realtimeUsers)->with("realtimePages", $realtimePages);
         } else {
             return view('sites.notfound')->with("domain", $domain);
         }
