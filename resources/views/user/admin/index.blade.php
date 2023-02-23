@@ -16,11 +16,13 @@
 
                         <div class="spacer20"></div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-10 users">
+
+                                <h2 class="" >Username:</h2>
 
                                 @if(count($users) > 0)
                                     @foreach ($users as $user)
-                                        <span class=""><a href="/user/{{$user->id}}">{{$user->name}}</a></span><br>
+                                        <span class="Username"><a href="/user/{{$user->id}}">{{$user->name}}</a></span><br>
                                         {{-- <span class="">{{$user->name}}</span> --}}
                                     @endforeach
                                 @else 
@@ -36,23 +38,24 @@
                 </div>
 
                 <div class="row">
-                    
-                    <div class="col-md-12">
 
-                        <div class="spacer20"></div>
+                    <div class="col-md-3">
 
-                            <div class="col-md-6">
-
-                                <div class="">
-                                    <a href="{{ route('user.create')}}" class="btn btn-gradient-purple">Create User</a>
-                                </div>
-
-                            </div>
-
-                        <div class="spacer20"></div>  
+                        <div class="CustomBtn">
+                            <a href="/dashboard" class="btn btn-gradient-purple">Back</a>
+                        </div>
 
                     </div>
 
+                    <div class="col-md-3">
+
+
+                        <div>
+                            <a href="{{ route('user.create')}}" class="btn btn-gradient-purple">Create User</a>
+                        </div>
+
+                    </div>
+                
                 </div>
 
             </div>

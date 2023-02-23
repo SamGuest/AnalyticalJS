@@ -45,21 +45,16 @@
                     </div>
 
                 </div>
+                
                 <div class="row">
-                    
-                    <div class="col-md-12">
 
-                        <div class="spacer20"></div>
+                    <div class="col-md-2">
 
-                            <div class="col-md-6">
+                        <div class="CustomBtn">
 
-                                <div class="CustomBtn">
-                                    <a href="{{ route('user.index') }}" class="btn btn-gradient-purple">Users</a>
-                                </div>
+                            <a href="/dashboard" class="btn btn-gradient-purple">Back</a>
 
-                            </div>
-
-                        <div class="spacer20"></div>  
+                        </div>
 
                     </div>
 

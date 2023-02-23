@@ -56,9 +56,12 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        {{-- <a class="dropdown-item" href="#">
-                                            Dashboard
-                                        </a> --}}
+                                        <a class="dropdown-item" href="/">
+                                            Home
+                                        </a>
+                                        <a class="dropdown-item" href="/details">
+                                            Account
+                                        </a>
                                         <a class="dropdown-item" href="{{ route('user.index') }}">
                                             Users
                                         </a>
