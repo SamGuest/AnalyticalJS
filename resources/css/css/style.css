@@ -200,7 +200,6 @@ a.underlined:hover:after{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-<<<<<<< HEAD
 
 .chart{
     max-height: 400px;
@@ -213,11 +212,10 @@ a.underlined:hover:after{
 
 .height100{
     height:100%;
-=======
+}
 .users{
     margin: auto!important;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
->>>>>>> 65dd8a0fd31d01ab22fb761c867882acc25b3593
 }
