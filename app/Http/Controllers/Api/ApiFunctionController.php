@@ -32,7 +32,7 @@ class ApiFunctionController
                 $session->first()->update(["pages" => $session->first()->pages+1]);
                 $id = $session->first()->id;
             } else {
-                $newSession = Session::create(["website_id" => $website->first()->id, "pages" => 1, "ip" => Request::getClientIp(true)]);
+                $newSession = Session::create(["website_id" => $website->first()->id, "pages" => 1, "ip" => Request::ip()]);
                 $id = $newSession->id;
             }
         } else if($website->get()->count() < 1) {
